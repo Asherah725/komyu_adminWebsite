@@ -146,6 +146,7 @@ if (!isset($_SESSION['admin_id'])) {
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid white;
+      cursor: pointer;
     }
 
     .content {
@@ -162,21 +163,27 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 .card {
-  background: #D2FFE4;        /* Bright green background */
+  background: #D2FFE4;
   border-radius: 12px;
   padding: 20px;
-  width: 250px;               /* Card width */
-  height: 120px;              /* Card height */
+  width: 250px;
+  height: 120px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* keeps them aligned vertically */
 }
 
 .card-text {
@@ -195,24 +202,25 @@ if (!isset($_SESSION['admin_id'])) {
   font-size: 32px;
   font-weight: bold;
   color: #000;
+  display: flex;
+  align-items: center; /* aligns with icon */
 }
 
 .card-icon img {
   width: 32px;
   height: 32px;
 }
-.charts-row {
+.card-footer {
   display: flex;
-  flex-wrap: wrap;   /* stack on smaller screens */
-  gap: 55px;
-  margin: 30px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.linechart-container,
-.piechart-container {
+.linechart-container{
   flex: 1;
   width: 555px;
   height: 350px;
+  margin-left: 30px;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
@@ -243,6 +251,8 @@ if (!isset($_SESSION['admin_id'])) {
           <img src="gray-trips.png" alt="Trips" class="menu-icon"> Trips</a>
         <a href="payments&points.php">
           <img src="gray-payments.png" alt="Payments" class="menu-icon"> Payment & Points</a>
+        <a href="settings.php">
+          <img src="gray-settings.png" alt="Acount Settings" class="menu-icon"> Account Settings</a>
       </div>
     </div>
 
@@ -265,45 +275,62 @@ if (!isset($_SESSION['admin_id'])) {
   <!-- === DASHBOARD CARDS START === -->
   <div class="cards">
     <div class="card">
-  <div class="card-header">
-    <div class="card-text">
-      <span class="card-title">Total Commuters</span>
+  <div class="card-text">
+    <span class="card-title">Total Commuters</span>
+    <div class="card-footer">
       <div class="card-value">150</div>
-    </div>
-    <div class="card-icon">
-      <img src="black-commuters.png" alt="Group Icon">
+      <div class="card-icon">
+        <img src="black-commuters.png" alt="Total Commuters" class="menu-icon">
+      </div>
     </div>
   </div>
 </div>
     <div class="card">
-      <div class="card-title">Active Drivers</div>
-      <div class="card-value">50</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Ongoing Trips</div>
-      <div class="card-value">20</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Pending Reports</div>
+  <div class="card-text">
+    <span class="card-title">Active Drivers</span>
+    <div class="card-footer">
       <div class="card-value">10</div>
+      <div class="card-icon">
+        <img src="black-drivers.png" alt="Active Drivers" class="menu-icon">
+      </div>
     </div>
   </div>
+</div>
+    <div class="card">
+  <div class="card-text">
+    <span class="card-title">Ongoing Trips</span>
+    <div class="card-footer">
+      <div class="card-value">10</div>
+      <div class="card-icon">
+        <img src="black-trips.png" alt="Ongoing Trips" class="menu-icon">
+      </div>
+    </div>
+  </div>
+</div>
+   <div class="card">
+  <div class="card-text">
+    <span class="card-title">Pending Reports</span>
+    <div class="card-footer">
+      <div class="card-value">50</div>
+      <div class="card-icon">
+        <img src="black-reports.png" alt="Pending Reports" class="menu-icon">
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <!-- === Line Graph === -->
   <div class="charts-row">
   <div class="linechart-container">
     <canvas id="myChart1"></canvas>
   </div>
-  <div class="piechart-container">
-    <canvas id="myChart2"></canvas>
-  </div>
-</div>
    </div>
     </main>
 </body>
 <script>
   let courses=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]// x ax
   let students=[90,100,30,40,35,100,150,200] //y ax
-  let drivers=["Good", "Bad"] //x axis
-  let ratings=[80,20] //y axis
   
 new Chart("myChart1",{
             type:'line',
@@ -331,25 +358,5 @@ new Chart("myChart1",{
                    }
                   }
         });
-                new Chart("myChart2", {
-              type: 'pie',
-              data: {
-                labels: drivers,
-                datasets: [{
-                  // Only red and green colors
-                  backgroundColor: ["red", "green"],
-                  data: ratings
-                }]
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false, // allows the canvas to stretch to container
-                legend: { display: true },
-                title: {
-                  display: true,
-                  text: "Driver's Ratings"
-                }
-              }
-            });
         </script>
 </html>

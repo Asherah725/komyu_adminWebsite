@@ -281,6 +281,8 @@ if (!isset($_SESSION['admin_id'])) {
           <img src="gray-trips.png" alt="Trips" class="menu-icon"> Trips</a>
         <a href="payments&points.php" class="active">
           <img src="white-payments.png" alt="Payments" class="menu-icon"> Payment & Points</a>
+          <a href="settings.php">
+          <img src="gray-settings.png" alt="Acount Settings" class="menu-icon"> Account Settings</a>
       </div>
     </div>
 

@@ -272,7 +272,7 @@ if (!isset($_SESSION['admin_id'])) {
         <a href="dashboard.php">
           <img src="gray-dashboard.png" alt="Dashboard" class="menu-icon"> Dashboard</a>
         <a href="commuters.php" class="active" >
-          <img src="icon-commuters.png" alt="Commuters" class="menu-icon"> Commuters</a>
+          <img src="white-commuters.png" alt="Commuters" class="menu-icon"> Commuters</a>
         <a href="drivers&conductors.php">
           <img src="gray-drivers.png" alt="Drivers" class="menu-icon"> Drivers & Conductors</a>
         <a href="reports&ratings.php">
@@ -281,13 +281,14 @@ if (!isset($_SESSION['admin_id'])) {
           <img src="gray-trips.png" alt="Trips" class="menu-icon"> Trips</a>
         <a href="payments&points.php">
           <img src="gray-payments.png" alt="Payments" class="menu-icon"> Payment & Points</a>
+          <a href="settings.php">
+          <img src="gray-settings.png" alt="Acount Settings" class="menu-icon"> Account Settings</a>
       </div>
     </div>
 
     <div class="logout">
       <a href="index.php">
-        <img src="icon-logout.png" alt="Logout" class="menu-icon"> Logout
-      </a>
+        <img src="icon-logout.png" alt="Logout" class="menu-icon"> Logout</a>
     </div>
   </nav>
 
