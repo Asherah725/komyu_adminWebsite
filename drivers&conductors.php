@@ -271,10 +271,10 @@ if (!isset($_SESSION['admin_id'])) {
       <div class="menu">
         <a href="dashboard.php">
           <img src="gray-dashboard.png" alt="Dashboard" class="menu-icon"> Dashboard</a>
-        <a href="commuters.php" class="active" >
-          <img src="white-commuters.png" alt="Commuters" class="menu-icon"> Commuters</a>
-        <a href="drivers&conductors.php">
-          <img src="gray-drivers.png" alt="Drivers" class="menu-icon"> Drivers & Conductors</a>
+        <a href="commuters.php">
+          <img src="gray-commuters.png" alt="Commuters" class="menu-icon"> Commuters</a>
+        <a href="drivers&conductors.php" class="active">
+          <img src="white-drivers.png" alt="Drivers" class="menu-icon"> Drivers & Conductors</a>
         <a href="reports&ratings.php">
           <img src="gray-reports.png" alt="Reports" class="menu-icon"> Reports & Ratings</a>
         <a href="trips.php">
@@ -288,7 +288,8 @@ if (!isset($_SESSION['admin_id'])) {
 
     <div class="logout">
       <a href="index.php">
-        <img src="icon-logout.png" alt="Logout" class="menu-icon"> Logout</a>
+        <img src="icon-logout.png" alt="Logout" class="menu-icon"> Logout
+      </a>
     </div>
   </nav>
 
@@ -301,43 +302,8 @@ if (!isset($_SESSION['admin_id'])) {
 
   <!-- Content -->
   <div class="content">
-    <h3>Commuters list</h3>
-    <div class="search-filter">
-    <div class="left-controls">
-        <input type="text" placeholder="Search...">
-        <select>
-        <option>Filter By</option>
-        <option>Student</option>
-        <option>Senior</option>
-        <option>PWD</option>
-        </select>
-    </div>
-    <div class="right-controls">
-        <button class="btn delete">Delete</button>
-        <button class="btn edit">Edit</button>
-    </div>
-    </div>
-    </main>
-
-   <!-- Table -->
-    <table>
-      <thead>
-        <tr>
-          <!-- Added Select All checkbox in the first column -->
-          <th><input type="checkbox" id="selectAll"></th>
-          <th>Commuter No.</th>
-          <th>Username</th>
-          <th>Email</th>
-          <th>Fullname</th>
-          <th>Role</th>
-          <th>Date Creation</th>
-          <th>Valid ID</th>
-          <th>ID Status</th>
-        </tr>
-      </thead>
-      <tbody>
-    </table>
+    <h3>Driver's & Conductors</h3>
+</main>
 </div>
 </body>
 </html>
->>>>>>> updatedWebsite

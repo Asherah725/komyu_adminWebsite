@@ -271,24 +271,25 @@ if (!isset($_SESSION['admin_id'])) {
       <div class="menu">
         <a href="dashboard.php">
           <img src="gray-dashboard.png" alt="Dashboard" class="menu-icon"> Dashboard</a>
-        <a href="commuters.php" class="active" >
-          <img src="white-commuters.png" alt="Commuters" class="menu-icon"> Commuters</a>
+        <a href="commuters.php">
+          <img src="gray-commuters.png" alt="Commuters" class="menu-icon"> Commuters</a>
         <a href="drivers&conductors.php">
           <img src="gray-drivers.png" alt="Drivers" class="menu-icon"> Drivers & Conductors</a>
         <a href="reports&ratings.php">
           <img src="gray-reports.png" alt="Reports" class="menu-icon"> Reports & Ratings</a>
-        <a href="trips.php">
-          <img src="gray-trips.png" alt="Trips" class="menu-icon"> Trips</a>
+        <a href="trips.php" class="active">
+          <img src="white-trips.png" alt="Trips" class="menu-icon"> Trips</a>
         <a href="payments&points.php">
           <img src="gray-payments.png" alt="Payments" class="menu-icon"> Payment & Points</a>
-          <a href="settings.php">
+        <a href="settings.php">
           <img src="gray-settings.png" alt="Acount Settings" class="menu-icon"> Account Settings</a>
       </div>
     </div>
 
     <div class="logout">
       <a href="index.php">
-        <img src="icon-logout.png" alt="Logout" class="menu-icon"> Logout</a>
+        <img src="icon-logout.png" alt="Logout" class="menu-icon"> Logout
+      </a>
     </div>
   </nav>
 
@@ -301,43 +302,8 @@ if (!isset($_SESSION['admin_id'])) {
 
   <!-- Content -->
   <div class="content">
-    <h3>Commuters list</h3>
-    <div class="search-filter">
-    <div class="left-controls">
-        <input type="text" placeholder="Search...">
-        <select>
-        <option>Filter By</option>
-        <option>Student</option>
-        <option>Senior</option>
-        <option>PWD</option>
-        </select>
-    </div>
-    <div class="right-controls">
-        <button class="btn delete">Delete</button>
-        <button class="btn edit">Edit</button>
-    </div>
-    </div>
-    </main>
-
-   <!-- Table -->
-    <table>
-      <thead>
-        <tr>
-          <!-- Added Select All checkbox in the first column -->
-          <th><input type="checkbox" id="selectAll"></th>
-          <th>Commuter No.</th>
-          <th>Username</th>
-          <th>Email</th>
-          <th>Fullname</th>
-          <th>Role</th>
-          <th>Date Creation</th>
-          <th>Valid ID</th>
-          <th>ID Status</th>
-        </tr>
-      </thead>
-      <tbody>
-    </table>
+    <h3>Trips</h3>
+</main>
 </div>
 </body>
 </html>
->>>>>>> updatedWebsite
