@@ -5,7 +5,6 @@ require 'db_connect.php'; // connection in $conn
 $error = '';
 
 if (isset($_POST['login'])) {
-    // Grab and trim inputs
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
 
@@ -125,7 +124,7 @@ if (isset($_POST['login'])) {
     .input-group input {
       width: 100%;
       padding: 12px 45px;
-      border: 1px solid #ccc;
+      border: 1px solid #00c268;
       border-radius: 10px;
       font-size: 15px;
     }
@@ -136,6 +135,11 @@ if (isset($_POST['login'])) {
       top: 50%;
       transform: translateY(-50%);
       fill: #00c268;
+    }
+
+    .input-group input:focus {
+      border-color: #00c268;   /* Green border on focus */
+      outline: none;           /* Remove default outline */
     }
 
     .forgot {
@@ -164,7 +168,7 @@ if (isset($_POST['login'])) {
     }
 
     .btn:hover {
-      background-color: #122b4a;
+      background-color: #1d416dff;
     }
 
     @media (max-width: 768px) {
@@ -223,4 +227,3 @@ if (isset($_POST['login'])) {
 </div>
 </body>
 </html>
-updatedWebsite

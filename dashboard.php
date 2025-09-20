@@ -150,85 +150,189 @@ if (!isset($_SESSION['admin_id'])) {
     }
 
     .content {
-      padding: 20px;
-      
+      padding: 10px;
     }
-  /* === Dashboard Cards === */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
-  margin-left: 30px;
-}
 
-.card {
-  background: #D2FFE4;
-  border-radius: 12px;
-  padding: 20px;
-  width: 250px;
-  height: 120px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    .content h2 {
+      margin-left: 25px;
+    }
+     /* === Dashboard Cards === */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 5px;
+        margin: 20px 0;
+        margin-left: 25px;
+    }
+
+    .card {
+        background: #D2FFE4;
+        border-radius: 12px;
+        padding: 20px;
+        width: 250px;
+        height: 120px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* keeps them aligned vertically */
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+  .card-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center; /* aligns with icon */
+  }
+
+  .card-icon img {
+    width: 32px;
+    height: 32px;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* LINE CHART */
+  .linechart-container{
+    width: 560px;
+    height: 350px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  }
+.charts-row {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 60px;
+  margin-top: 30px;
+  margin-left: 25px;
 }
+/* Progress Bar */
 
-.card:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* keeps them aligned vertically */
-}
-
-.card-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-title {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #000;
-}
-
-.card-value {
-  font-size: 32px;
-  font-weight: bold;
-  color: #000;
-  display: flex;
-  align-items: center; /* aligns with icon */
-}
-
-.card-icon img {
-  width: 32px;
-  height: 32px;
-}
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.linechart-container{
-  flex: 1;
+.analytics-card {
   width: 555px;
-  height: 350px;
-  margin-left: 30px;
   background: #fff;
   padding: 20px;
+  margin-right: 50px;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
+.analytics-card h3 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  </style>
+.analytics-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.analytics-label {
+  flex: 1;
+}
+
+.analytics-bar {
+  flex: 2;
+  height: 8px;
+  background: #eee;
+  border-radius: 5px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.analytics-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.analytics-value {
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Trips Table */
+.recent-trips {
+  width: 560px;
+   height: 250px;
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  padding: 20px;
+}
+
+.recent-trips h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.recent-trips table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-trips th {
+  background: #0DD85F;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+}
+
+.recent-trips td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.recent-trips .view-more {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1d4ed8; /* blue */
+}
+.bottom-row {
+  display: flex;
+  gap: 55px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+ </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 <body>
@@ -325,7 +429,97 @@ if (!isset($_SESSION['admin_id'])) {
   <div class="linechart-container">
     <canvas id="myChart1"></canvas>
   </div>
+  <!-- Analytics Card -->
+  <div class="analytics-card">
+    <h3>Report Types Distribution</h3>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Behavior Issues</span>
+      <div class="analytics-bar"><span style="width:60%; background:#a855f7;"></span></div>
+      <span class="analytics-value">60%</span>
+    </div>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Performance</span>
+      <div class="analytics-bar"><span style="width:25%; background:#3b82f6;"></span></div>
+      <span class="analytics-value">25%</span>
+    </div>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Safety Concerns</span>
+      <div class="analytics-bar"><span style="width:10%; background:#ef4444;"></span></div>
+      <span class="analytics-value">10%</span>
+    </div>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Other</span>
+      <div class="analytics-bar"><span style="width:5%; background:#374151;"></span></div>
+      <span class="analytics-value">5%</span>
+    </div>
+  </div>
    </div>
+   <div class="bottom-row">
+  <!-- Recent Trips Table -->
+  <div class="recent-trips">
+    <h3>Recent Trips</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Route</th>
+          <th>Date</th>
+          <th>Passenger Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SM → IT PARK</td>
+          <td>September 9, 2025</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td>SM → IT PARK</td>
+          <td>September 8, 2025</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>SM → IT PARK</td>
+          <td>September 7, 2025</td>
+          <td>50</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="trips.php" class="view-more">View More</a>
+  </div>
+
+  <!-- Resolution Status Progress Card -->
+  <div class="analytics-card">
+    <h3>Resolution Status</h3>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Resolved</span>
+      <div class="analytics-bar"><span style="width:78%; background:#22c55e;"></span></div>
+      <span class="analytics-value">78%</span>
+    </div>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Pending</span>
+      <div class="analytics-bar"><span style="width:15%; background:#facc15;"></span></div>
+      <span class="analytics-value">15%</span>
+    </div>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Investigating</span>
+      <div class="analytics-bar"><span style="width:5%; background:#3b82f6;"></span></div>
+      <span class="analytics-value">5%</span>
+    </div>
+
+    <div class="analytics-item">
+      <span class="analytics-label">Dismissed</span>
+      <div class="analytics-bar"><span style="width:2%; background:#374151;"></span></div>
+      <span class="analytics-value">2%</span>
+    </div>
+  </div>
+</div>
     </main>
 </body>
 <script>
@@ -359,5 +553,6 @@ new Chart("myChart1",{
                   }
         });
         </script>
+        <!-- === Recent Trips Table === -->
+</div>
 </html>
->>>>>>> updatedWebsite
